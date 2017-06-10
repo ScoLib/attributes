@@ -51,6 +51,19 @@ public function getAttribute($key = null, $default = null)
  */
 public function setAttribute($key, $value = null)
 
+/**
+ * @param  string|int $key
+ *
+ * @return bool
+ */
+public function existsAttribute($key)
+
+/**
+ * @param  string|array $keys
+ *
+ * @return bool
+ */
+public function hasAttribute($keys)
 ```
 
 ## Change log

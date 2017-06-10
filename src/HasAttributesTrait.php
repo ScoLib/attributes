@@ -38,4 +38,24 @@ trait HasAttributesTrait
     {
         return Arr::get($this->attributes, $key, $default);
     }
+
+    /**
+     * @param  string|int $key
+     *
+     * @return bool
+     */
+    public function existsAttribute($key)
+    {
+        return Arr::exists($this->attributes, $key);
+    }
+
+    /**
+     * @param  string|array $keys
+     *
+     * @return bool
+     */
+    public function hasAttribute($keys)
+    {
+        return Arr::has($this->attributes, $keys);
+    }
 }
