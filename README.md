@@ -20,8 +20,37 @@ $ composer require scolib/attributes
 ## Usage
 
 ``` php
-$skeleton = new Sco\Attributes();
-echo $skeleton->echoPhrase('Hello, League!');
+use Sco\Attributes\HasAttributesTrait;
+
+class Demo
+{
+    use HasAttributesTrait;
+｝
+```
+
+### Method
+
+```php
+/**
+ * Get the specified log value.
+ *
+ * @param null|string $key
+ * @param mixed       $default
+ *
+ * @return mixed
+ */
+public function getAttribute($key = null, $default = null)
+
+/**
+ * Set a given log value.
+ *
+ * @param array|string $key
+ * @param mixed        $value
+ *
+ * @return bool
+ */
+public function setAttribute($key, $value = null)
+
 ```
 
 ## Change log

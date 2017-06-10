@@ -38,12 +38,4 @@ trait HasAttributesTrait
     {
         return Arr::get($this->attributes, $key, $default);
     }
-
-
-    public function merge(array $attributes)
-    {
-        $this->attributes = array_merge($this->attributes, $attributes);
-
-        return $this;
-    }
 }
