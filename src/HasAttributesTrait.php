@@ -40,6 +40,8 @@ trait HasAttributesTrait
     }
 
     /**
+     * Determine if the given key exists in the attributes.
+     *
      * @param  string|int $key
      *
      * @return bool
@@ -50,6 +52,8 @@ trait HasAttributesTrait
     }
 
     /**
+     * Check if an key or keys exist in the attributes using "dot" notation.
+     *
      * @param  string|array $keys
      *
      * @return bool
@@ -57,5 +61,36 @@ trait HasAttributesTrait
     public function hasAttribute($keys)
     {
         return Arr::has($this->attributes, $keys);
+    }
+
+    /**
+     * Convert the Object instance to an array.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Convert the object into something JSON serializable.
+     *
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
+
+    /**
+     * Convert the Object instance to JSON.
+     *
+     * @param  int  $options
+     * @return string
+     */
+    public function toJson($options = 0)
+    {
+        return json_encode($this->jsonSerialize(), $options);
     }
 }
