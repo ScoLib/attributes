@@ -3,7 +3,6 @@
 
 namespace Sco\Attributes;
 
-
 use Illuminate\Support\Arr;
 
 trait HasOriginalAndAttributesTrait

@@ -60,7 +60,9 @@ class HasAttributesTraitTest extends \PHPUnit_Framework_TestCase
 
     public function testToJson()
     {
-        $this->assertJsonStringEqualsJsonString(json_encode($this->array),
-            $this->mock->toJson());
+        $this->assertJsonStringEqualsJsonString(
+            json_encode($this->array),
+            $this->mock->toJson()
+        );
     }
 }
