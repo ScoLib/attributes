@@ -80,7 +80,9 @@ trait HasAttributesTrait
      */
     public function toArray()
     {
-        return $this->getAttributes();
+        return array_map(function ($value) {
+            return $value instanceof Arrayable ? $value->toArray() : $value;
+        }, $this->getAttributes());
     }
 
     /**
