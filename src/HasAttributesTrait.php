@@ -14,7 +14,7 @@ trait HasAttributesTrait
      * @param array|string $key
      * @param mixed        $value
      *
-     * @return bool
+     * @return $this
      */
     public function setAttribute($key, $value = null)
     {
@@ -23,7 +23,7 @@ trait HasAttributesTrait
         foreach ($keys as $key => $value) {
             Arr::set($this->attributes, $key, $value);
         }
-        return true;
+        return $this;
     }
 
     /**
@@ -37,6 +37,16 @@ trait HasAttributesTrait
     public function getAttribute($key = null, $default = null)
     {
         return Arr::get($this->attributes, $key, $default);
+    }
+
+    /**
+     * Get all of the current attributes on the class.
+     *
+     * @return array
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
     }
 
     /**
@@ -70,7 +80,7 @@ trait HasAttributesTrait
      */
     public function toArray()
     {
-        return $this->attributes;
+        return $this->getAttributes();
     }
 
     /**
